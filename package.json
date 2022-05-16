@@ -1,0 +1,33 @@
+{
+  "name": "odin-dynamic-user-interface-interactions",
+  "description": "Built for the Odin Project's [Dynamic User Interface Interactions practice assignment](https://www.theodinproject.com/lessons/node-path-javascript-dynamic-user-interface-interactions).",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alopine/odin-dynamic-user-interface-interactions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alopine/odin-dynamic-user-interface-interactions/issues"
+  },
+  "homepage": "https://github.com/alopine/odin-dynamic-user-interface-interactions#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
