@@ -1,3 +1,5 @@
+/* || General styles */
+
 :root {
   --bg-color: #272343;
   --font-color: #fffffe;
@@ -6,27 +8,27 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
 }
 
-body,
 section {
+  display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-section {
   min-height: 210px;
   max-height: fit-content;
   margin: 1rem;
 }
 
 h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
   font-size: 1.1rem;
 }
 
-.demoContainer {
-  column-gap: 1rem;
-}
+/* || Dropdown menu styles */
 
 .dropDown {
   background-color: var(--bg-color);
@@ -53,6 +55,7 @@ h1 {
   list-style: none;
   margin: 0;
   padding: 0;
+  z-index: 1;
 }
 
 li {
@@ -69,6 +72,36 @@ li:hover {
   display: none;
 }
 
-.flex {
+/* || Mobile menu styles */
+
+#mobileMenu .demoContainer {
+  background-color: var(--highlight-color);
+  border-radius: 5px;
+  width: 200px;
+}
+
+.content {
+  height: 250px;
+  overflow-y: scroll;
+  padding: 1rem;
+}
+
+.tabBar {
+  background-color: var(--bg-color);
+  border-radius: 5px;
+  padding: 0.25rem 0.5rem;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.tabButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active svg {
+  stroke: var(--highlight-color)
 }
