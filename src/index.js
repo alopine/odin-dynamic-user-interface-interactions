@@ -47,8 +47,7 @@ class Events {
     buttons.forEach((button) => {
       button.addEventListener('click', () => {
         if (!button.classList.contains('active')) {
-          const lastActive = document.querySelector('.active');
-          lastActive.classList.remove('active');
+          document.querySelector('.active').classList.remove('active');
           pages.forEach((page) => {
             if (!page.classList.contains('hidden')) {
               page.classList.add('hidden');
