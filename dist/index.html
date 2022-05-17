@@ -9,13 +9,14 @@
 
     <title>Odin Dynamic User Interface Interactions</title>
   </head>
-  <body>
-    <section>
-      <h1>Drop-Down Menu</h1>
-      <div class="demoContainer">
-        <nav>
-          <ul>
-            <li>Menu Link 1</li>
+  <body class="flex">
+    <section class="flex" id="dropDownHover">
+      <h1>Drop-Down Menu (Hover)</h1>
+      <div class="demoContainer flex">
+        <nav class="dropDown">
+          <div class="linkHeader">Links</div>
+          <ul class="linksContainer hidden">
+            <li>Menu link 1</li>
             <li>Menu link 2</li>
             <li>Menu link 3</li>
             <li>Menu link 4</li>
@@ -24,7 +25,28 @@
         </nav>
       </div>
     </section>
-    <section>
+    <section class="flex" id="dropDownClick">
+      <h1>Drop-Down Menu (Click)</h1>
+      <div class="demoContainer">
+        <nav class="dropDown">
+          <div class="linkHeader">Links</div>
+          <ul class="linksContainer hidden">
+            <li>Menu link 1</li>
+            <li>Menu link 2</li>
+            <li>Menu link 3</li>
+            <li>Menu link 4</li>
+            <li>Menu link 5</li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <section class="flex" id="mobileMenu">
+      <h1>Mobile Menu</h1>
+      <div class="demoContainer">
+        
+      </div>
+    </section>
+    <section class="flex" id="imageSlider">
       <h1>Image Slider</h1>
       <div class="demoContainer"></div>
     </section>
