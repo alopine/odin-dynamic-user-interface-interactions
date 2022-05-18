@@ -31,6 +31,10 @@ h2 {
   font-size: 1.1rem;
 }
 
+.hidden {
+  display: none;
+}
+
 /* || Dropdown menu styles */
 
 .dropDown {
@@ -115,16 +119,20 @@ li:hover {
   background-color: var(--highlight-color);
 }
 
+#slideContainer>.active {
+  display: flex;
+}
+
 .slideEntry {
   color: var(--font-color);
   font-size: 0.9rem;
   width: 640px;
   height: 360px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 0.3s;
 }
 
 .slideEntry>img {
@@ -134,10 +142,12 @@ li:hover {
 }
 
 .slideEntry>p {
-  width: 100%;
+  background-color: #00000050;
+  width: inherit;
+  padding: 0.25rem 0;
   text-align: center;
   position: absolute;
-  bottom: -3rem;
+  align-self: flex-end;
 }
 
 .slideEntry>p>a {
@@ -161,11 +171,36 @@ li:hover {
   z-index: 3;
 }
 
-.slideArrows>div {
-  width: 24px;
-  height: 24px;
+.slideArrows>div, .slideArrows svg {
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.hidden {
-  display: none;
+.slideArrows>div:hover {
+  background-color: var(--bg-color);
+}
+
+.slideArrows>div:hover svg {
+  stroke: var(--font-color);
+}
+
+.slideNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navDot {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+  opacity: 0.5;
+  margin: 0.25rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.slideNav>.active, .navDot:hover {
+  opacity: 1;
 }

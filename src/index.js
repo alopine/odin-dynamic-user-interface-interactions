@@ -6,6 +6,7 @@ class Events {
     this.hoverListener();
     this.clickListener();
     this.mobileMenuListener();
+    this.imageSliderListener();
   }
 
   static hoverListener() {
@@ -58,6 +59,74 @@ class Events {
         }
       });
     });
+  }
+
+  static imageSliderListener() {
+    // Select image slider elements
+    const leftArrow = document.getElementById('slideLeft');
+    const rightArrow = document.getElementById('slideRight');
+    const slideContainer = document.getElementById('slideContainer');
+    const slides = slideContainer.querySelectorAll('.slideEntry');
+    const slideNav = document.querySelector('.slideNav');
+
+    function changeSlide(mode) {
+      const activeSlide = slideContainer.querySelector('.active');
+      switch (mode) {
+        case 'left':
+          if (activeSlide.previousElementSibling) {
+            activeSlide.previousElementSibling.classList.add('active');
+          } else {
+            slideContainer.lastElementChild.classList.add('active');
+          }
+          break;
+        case 'right':
+          if (activeSlide.nextElementSibling) {
+            activeSlide.nextElementSibling.classList.add('active');
+          } else {
+            slideContainer.firstElementChild.classList.add('active');
+          }
+          break;
+        default:
+          return;
+      }
+      activeSlide.classList.remove('active');
+      // Update slideNav
+      const slidesArray = Array.from(slides);
+      const activeIndex = slidesArray.findIndex((element) => element.classList.contains('active'));
+      slideNav.querySelector('.active').classList.remove('active');
+      slideNav.children.item(activeIndex).classList.add('active');
+    }
+
+    // Add listener to left arrow
+    leftArrow.addEventListener('click', () => {
+      changeSlide('left');
+    });
+
+    // Add listener to right arrow
+    rightArrow.addEventListener('click', () => {
+      changeSlide('right');
+    });
+
+    // slideNav dots
+    slides.forEach((slide, index) => {
+      const navDot = document.createElement('div');
+      navDot.classList.add('navDot');
+      if (index === 0) {
+        navDot.classList.add('active');
+      }
+      navDot.addEventListener('click', () => {
+        slideContainer.querySelector('.active').classList.remove('active');
+        slideNav.querySelector('.active').classList.remove('active');
+        slide.classList.add('active');
+        navDot.classList.add('active');
+      });
+      slideNav.append(navDot);
+    });
+
+    // Automatically cycle through slides
+    setInterval(() => {
+      changeSlide('right');
+    }, 5000);
   }
 }
 
